@@ -1,0 +1,125 @@
+!SESSION 2021-05-10 10:28:27.181 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_261
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=cs_CZ
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.fx.ide.java6 4 0 2021-05-10 10:28:27.898
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.java6 [486]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version>=1.3)(!(version>=1.8)))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2021-05-10 10:28:46.848
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-10 10:28:46.848
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@49ea13b6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7c02b3cb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-10 10:28:56.667
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\sorin'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.mylyn.tasks.index.core 4 0 2021-05-10 10:29:00.931
+!MESSAGE Failed to update task list index
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unexpected exception: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.maintainIndex(TaskListIndex.java:1117)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.access$0(TaskListIndex.java:1084)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex$MaintainIndexJob.run(TaskListIndex.java:184)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.nio.file.FileSystemException: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:301)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at org.apache.lucene.store.FSDirectory.renameFile(FSDirectory.java:297)
+	at org.apache.lucene.store.LockValidatingDirectoryWrapper.renameFile(LockValidatingDirectoryWrapper.java:56)
+	at org.apache.lucene.index.SegmentInfos.finishCommit(SegmentInfos.java:801)
+	at org.apache.lucene.index.IndexWriter.finishCommit(IndexWriter.java:3021)
+	at org.apache.lucene.index.IndexWriter.commitInternal(IndexWriter.java:2996)
+	at org.apache.lucene.index.IndexWriter.shutdown(IndexWriter.java:1086)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1129)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.rebuildIndexCompletely(TaskListIndex.java:1262)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.maintainIndex(TaskListIndex.java:1103)
+	... 3 more
+!SUBENTRY 1 org.eclipse.mylyn.tasks.index.core 4 0 2021-05-10 10:29:00.932
+!MESSAGE Unexpected exception: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+!STACK 0
+java.nio.file.FileSystemException: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:301)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at org.apache.lucene.store.FSDirectory.renameFile(FSDirectory.java:297)
+	at org.apache.lucene.store.LockValidatingDirectoryWrapper.renameFile(LockValidatingDirectoryWrapper.java:56)
+	at org.apache.lucene.index.SegmentInfos.finishCommit(SegmentInfos.java:801)
+	at org.apache.lucene.index.IndexWriter.finishCommit(IndexWriter.java:3021)
+	at org.apache.lucene.index.IndexWriter.commitInternal(IndexWriter.java:2996)
+	at org.apache.lucene.index.IndexWriter.shutdown(IndexWriter.java:1086)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1129)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.rebuildIndexCompletely(TaskListIndex.java:1262)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.maintainIndex(TaskListIndex.java:1103)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.access$0(TaskListIndex.java:1084)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex$MaintainIndexJob.run(TaskListIndex.java:184)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.mylyn.tasks.index.core 4 0 2021-05-10 10:29:00.932
+!MESSAGE Unexpected exception: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+!STACK 0
+java.nio.file.FileSystemException: D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\pending_segments_1 -> D:\Dropboxy\Dan\Dropbox\eclipseWorkspace2\Ak3point6RLogger\.metadata\.mylyn\.taskListIndex\segments_1: Proces nemá přístup k souboru, neboť jej právě využívá jiný proces.
+
+	at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+	at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+	at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:301)
+	at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+	at java.nio.file.Files.move(Files.java:1395)
+	at org.apache.lucene.store.FSDirectory.renameFile(FSDirectory.java:297)
+	at org.apache.lucene.store.LockValidatingDirectoryWrapper.renameFile(LockValidatingDirectoryWrapper.java:56)
+	at org.apache.lucene.index.SegmentInfos.finishCommit(SegmentInfos.java:801)
+	at org.apache.lucene.index.IndexWriter.finishCommit(IndexWriter.java:3021)
+	at org.apache.lucene.index.IndexWriter.commitInternal(IndexWriter.java:2996)
+	at org.apache.lucene.index.IndexWriter.shutdown(IndexWriter.java:1086)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1129)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.rebuildIndexCompletely(TaskListIndex.java:1262)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.maintainIndex(TaskListIndex.java:1103)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.access$0(TaskListIndex.java:1084)
+	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex$MaintainIndexJob.run(TaskListIndex.java:184)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
